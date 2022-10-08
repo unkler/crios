@@ -23,7 +23,7 @@ class CustomerFactory extends Factory
             'name' => $this->faker->name,
             'kana' => $this->faker->kanaName,
             'tel' => $tel,
-            'email' => $this->faker->email,
+            'email' => $this->faker->unique()->email,
             'postcode' => $this->faker->postcode,
             'address' => $address,
             'birthday' => $this->faker->dateTime,

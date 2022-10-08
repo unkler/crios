@@ -41,14 +41,14 @@ import FlashMessage from '@/Components/FlashMessage.vue';
                                 </thead>
                                 <tbody>
                                   <tr v-for="item in items" :key="item.id">
-                                    <td class="px-4 py-3">
+                                    <td class="border-b-2 border-gray-200 px-4 py-3">
                                       <Link class="text-blue-400" :href="route('items.show', {item: item.id})">
                                         {{ item.id }}
                                       </Link>
                                     </td>
-                                    <td class="px-4 py-3">{{ item.name }}</td>
-                                    <td class="px-4 py-3">{{ item.price }}</td>
-                                    <td class="px-4 py-3">
+                                    <td class="border-b-2 border-gray-200 px-4 py-3">{{ item.name }}</td>
+                                    <td class="border-b-2 border-gray-200 px-4 py-3">{{ item.price }}</td>
+                                    <td class="border-b-2 border-gray-200 px-4 py-3">
                                       <span v-if="item.is_selling === 1">販売中</span>
                                       <span v-if="item.is_selling === 0">停止中</span>
                                     </td>
