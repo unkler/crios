@@ -7,6 +7,7 @@ use App\Http\Controllers\InertiaTestController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\AnalysisController;
 
 
 Route::resource('items', ItemController::class)
@@ -21,6 +22,9 @@ Route::resource('customers', CustomerController::class)
 Route::get('/inertia-test', function() {
     return Inertia::render('InertiaTest');
 });
+
+Route::get('analysis', [AnalysisController::class, 'index'])
+    ->name('analysis');
 
 Route::get('/component-test', function() {
     return Inertia::render('ComponentTest');
