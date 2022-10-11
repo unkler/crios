@@ -31,7 +31,6 @@ const getData = async () => {
             if(res.data.eachCount) data.eachCount = res.data.eachCount
             data.totals = res.data.totals
             data.type = res.data.type
-            console.log(res.data)
         })
     } catch (e) {
         console.log(e.message)

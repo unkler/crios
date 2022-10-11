@@ -25,6 +25,7 @@ const submit = () => {
     <GuestLayout>
         <Head title="会員登録" />
 
+        <div class="my-3">以下の項目を入力し、ご利用を開始して下さい。</div>
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="name" value="名前" />

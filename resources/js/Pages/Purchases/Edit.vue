@@ -129,10 +129,10 @@ onMounted(() => {
                                     <div>
 
                                       <label for="status" class="leading-7 text-sm text-gray-600">ステータス</label>
-                                      <input type="radio" id="uncancelled" name="status" v-model="form.status" class="ml-2" value="1">
-                                      <label for="uncancelled" class="ml-2 mr-4">未キャンセル</label>
-                                      <input type="radio" id="cancelled" name="status" v-model="form.status" class="ml-2" value="0">
-                                      <label for="cancelled" class="ml-2 mr-4">キャンセルする</label>
+                                      <input type="radio" id="unsupported" name="status" v-model="form.status" class="ml-2" value="1">
+                                      <label for="unsupported" class="ml-2 mr-4">未対応</label>
+                                      <input type="radio" id="supported" name="status" v-model="form.status" class="ml-2" value="0">
+                                      <label for="supported" class="ml-2 mr-4">対応済み</label>
                                     </div>
                                   </div>
 
