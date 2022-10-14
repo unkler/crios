@@ -85,16 +85,16 @@ const props = defineProps({
                                     <div>
                                       <label for="price" class="leading-7 text-sm text-gray-600">ステータス</label>
                                       <div v-if="props.order[0].status === 1" class="w-full border-b border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                        未キャンセル
+                                        未対応
                                       </div>
                                       <div v-if="props.order[0].status === 0" class="w-full border-b border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                        キャンセル済
+                                        対応済
                                       </div>
                                     </div>
                                   </div>
                                   <div v-if="props.order[0].status === 0" class="p-2 w-full">
                                     <div>
-                                      <label for="price" class="leading-7 text-sm text-gray-600">キャンセル日</label>
+                                      <label for="price" class="leading-7 text-sm text-gray-600">対応日</label>
                                       <div class="w-full border-b border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                         {{ dayjs(props.order[0].updated_at).format('YYYY-MM-DD HH:mm:ss') }}
                                       </div>

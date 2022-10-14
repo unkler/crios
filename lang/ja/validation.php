@@ -167,6 +167,7 @@ return [
         'birthday' => '誕生日',
         'gender' => '性別',
         'password' => 'パスワード',
+        'customer_id' => '会員名',
     ],
 
 ];

@@ -32,7 +32,6 @@ const submit = () => {
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
-
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="メールアドレス" />
@@ -54,6 +53,10 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
+
+                <Link :href="route('register')" class="mr-5 underline text-sm text-gray-600 hover:text-gray-900">
+                    未登録の方はこちら
+                </Link>
                 <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
                     パスワードを忘れた方はこちら
                 </Link>

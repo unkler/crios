@@ -21,7 +21,7 @@ class PurchaseController extends Controller
     {
         $orders = Order::groupBy('id')
             ->selectRaw('id, sum(subtotal) as total, customer_name, status, created_at')
-            ->orderByDesc('status')
+            ->orderBy('status')
             ->orderByDesc('created_at')
             ->paginate(50);
         
@@ -74,7 +74,11 @@ class PurchaseController extends Controller
             DB::rollBack();
         }
 
-        return to_route('dashboard');
+        return to_route('purchases.index')
+            ->with([
+                'message' => '登録しました。',
+                'status' => 'success'
+            ]);
     }
 
     /**
@@ -177,11 +181,11 @@ class PurchaseController extends Controller
             DB::rollBack();
         }
 
-        return to_route('dashboard');
-        
-
-
-        // dd($request, $purchase);
+        return to_route('purchases.index')
+            ->with([
+                'message' => '更新しました。',
+                'status' => 'success'
+            ]);
     }
 
     /**

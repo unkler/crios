@@ -89,7 +89,6 @@ class ItemController extends Controller
      */
     public function update(UpdateItemRequest $request, Item $item)
     {
-        dd($item->name, $request->name);
         $item->name = $request->name;
         $item->memo = $request->memo;
         $item->price = $request->price;
