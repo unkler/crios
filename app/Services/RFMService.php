@@ -45,22 +45,34 @@ class RFMService
         $totals = DB::table($subQuery)->count();
 
         $rCount = DB::table($subQuery)
-            ->groupBy('r')
-            ->selectRaw('r, count(r)')
+            ->rightJoin('ranks', 'ranks.rank', '=', 'r')
+            ->groupBy('rank')
+            // ->selectRaw('r, count(r)')
+            ->selectRaw('rank as r, count(r)')
             ->orderBy('r', 'desc')
             ->pluck('count(r)');
-        
+
+        // dd($rCount);
+
         $fCount = DB::table($subQuery)
-            ->groupBy('f')
-            ->selectRaw('f, count(f)')
+            ->rightJoin('ranks', 'ranks.rank', '=', 'f')
+            ->groupBy('rank')
+            // ->selectRaw('f, count(f)')
+            ->selectRaw('rank as f, count(f)')
             ->orderBy('f', 'desc')
             ->pluck('count(f)');
 
-        $mCount = DB::table($subQuery)
-            ->groupBy('m')
-            ->selectRaw('m, count(m)')
+        // dd($fCount);
+
+            $mCount = DB::table($subQuery)
+            ->rightJoin('ranks', 'ranks.rank', '=', 'm')
+            ->groupBy('rank')
+            // ->selectRaw('m, count(m)')
+            ->selectRaw('rank as m, count(m)')
             ->orderBy('m', 'desc')
             ->pluck('count(m)');
+
+        // dd($mCount);
 
         $eachCount = [];
         $rank = 5;
